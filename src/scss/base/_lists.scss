@@ -1,0 +1,50 @@
+// --------------------------------------------------------------------------
+// Lists
+// --------------------------------------------------------------------------
+
+
+
+
+.app-ul {
+    margin: 0 0 30px;
+    padding: 0;
+    list-style: none;
+    & > li {
+        position: relative;
+        padding: 0 0 0 38px;
+        margin: 0 0 10px;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            left: 12px;
+            width: 4px;
+            height: 4px;
+            top: 10px;
+            background: #131314;
+        }
+    }
+}
+
+.app-ol {
+    margin: 0 0 30px;
+    padding: 0;
+    list-style: none;
+    counter-reset: point;
+    & > li {
+        position: relative;
+        padding: 0 0 0 38px;
+        margin: 0 0 10px;
+        &:after {
+            content: counter(point) '.';
+            counter-increment: point 1;
+            color: #131314;
+            position: absolute;
+            top: 0;
+            left: 12px;
+        }
+    }
+}

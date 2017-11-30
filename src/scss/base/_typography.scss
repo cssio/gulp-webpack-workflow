@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=cyrillic,cyrillic-ext,latin-ext');
+
+html {
+    font-size: 0.8px;
+    @include breakpoint(md) {
+        font-size: 1px;
+    }
+}
+
+body {
+    font: 400 13px/1.428 'Open Sans', Helvetica, Arial, sans-serif;
+    color: #1c1c1c;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 25rem;
+}
+
+h1 {
+    font-size: 36rem;
+}
+
+h2 {
+    font-size: 28rem;
+}
+
+h3 {
+    font-size: 22rem;
+}
+
+h4 {
+    font-size: 16rem;
+}
+
+h5 {
+    font-size: 14rem;
+}
+
+p {
+    margin: 0 0 20rem;
+}
+
+
+figure {
+    margin: 0 0 20rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 25rem 0;
+}
+
+blockquote {
+    border-left: 5px solid #010101;
+    padding: 5px 0 5px 30px;
+    margin: 0 0 25rem;
+    font-size: 16rem;
+    font-style: italic;
+}
+
+
+a {
+    color: #20a2ea;
+    text-decoration: underline;
+    &:hover {
+        color: #0f85c7;
+        text-decoration: underline;
+    }
+}
+
+mark {
+    background: none;
+    color: #f26f21;
+}
+
+
+label {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 5px;
+}

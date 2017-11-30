@@ -1,0 +1,46 @@
+// --------------------------------------------------------------------------
+// Tables
+// --------------------------------------------------------------------------
+
+
+.app-table-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 0 45px;
+    .app-table {
+        margin: 0;
+    }
+}
+
+.app-table {
+    width: 100%;
+    margin: 0 0 45px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 24px;
+    color: #0f1935;
+    border-collapse: collapse;
+    border-spacing: 0;
+    min-width: 640px;
+    th, td {
+        padding: 20px;
+        background: #fff;
+        border: 2px solid #F5F5F5;
+        vertical-align: top;
+    }
+    th {
+        font-weight: 400;
+        background: #fafafa;
+    }
+    tbody tr:nth-child(even) td {
+        background: #fafafa;
+    }
+
+
+    &__layout {
+        table-layout: fixed;
+    }
+    
+}
+

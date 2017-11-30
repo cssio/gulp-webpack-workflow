@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="8px" height="16px" viewBox="0 0 8 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>B7F80753-C28E-4FA6-B480-DAD9A0DB6F16</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="3.80816471 15.5958788 0 15.5958788 0 0.484606061 3.80816471 0.484606061 7.61632941 0.484606061 7.61632941 15.5958788"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main" transform="translate(-1116.000000, -3454.000000)">
+            <g id="Footer" transform="translate(41.000000, 3311.000000)">
+                <g id="Social-Icons" transform="translate(1059.000000, 131.000000)">
+                    <g id="Page-1" transform="translate(16.000000, 12.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M4.94385882,15.5958788 L4.94385882,8.70278788 L7.18950588,8.70278788 L7.52550588,6.01672727 L4.94385882,6.01672727 L4.94385882,4.30181818 C4.94385882,3.52412121 5.15327059,2.99369697 6.23609412,2.99369697 L7.61632941,2.99321212 L7.61632941,0.590787879 C7.37774118,0.557818182 6.55844706,0.484606061 5.60456471,0.484606061 C3.61397647,0.484606061 2.25115294,1.73648485 2.25115294,4.03563636 L2.25115294,6.01672727 L-0.000141176471,6.01672727 L-0.000141176471,8.70278788 L2.25115294,8.70278788 L2.25115294,15.5958788 L4.94385882,15.5958788 Z" id="Fill-1" fill="#737373" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

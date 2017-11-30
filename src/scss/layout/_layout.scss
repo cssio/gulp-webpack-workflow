@@ -1,0 +1,78 @@
+// --------------------------------------------------------------------------
+// Layout
+// --------------------------------------------------------------------------
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: #FEDA6A;
+	color: #010101;
+	padding: 0 20px;
+}
+
+.app {
+	position: relative;
+	min-height: 100%;
+	overflow: hidden;
+	background: #fff;
+	max-width: 900px;
+	margin: 40rem auto;
+	padding: 40rem;
+	border-radius: 3px;
+	box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+}
+
+.app-heading {
+	small {
+		font-size: 12px;
+	}
+}
+
+.owl-carousel {
+	margin: 40px 0;
+	.owl-nav {
+		text-align: center;
+		padding: 10px 0;
+	}
+	.owl-prev, .owl-next {
+		color: #FFF;
+	    font-size: 14px;
+	    margin: 5px;
+	    padding: 4px 7px;
+	    background: #D6D6D6;
+	    display: inline-block;
+	    cursor: pointer;
+	    border-radius: 3px;
+	    &:hover {
+	    	background: #20A2EA;
+	    }
+	}
+	.owl-dots {
+		text-align: center;
+		padding: 20px 0 0;
+	}
+	.owl-dot {
+		display: inline-block;
+		vertical-align: top;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: #D6D6D6;
+		margin: 0 4px;
+		&.active {
+			background: #20A2EA;
+		}
+	}
+}
+
+.owl-carousel-item {
+	height: 140px;
+    background: #20A2EA;
+    padding: 10px;
+    font-size: 20rem;
+    font-weight: 700;
+    color: #fff;
+
+}

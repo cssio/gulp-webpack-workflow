@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+
+.btn {
+	font: 500 14px/18px 'Open Sans', Helvetica, Arial, sans-serif;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	border: 1px solid transparent;
+    letter-spacing: 1px;
+	padding: 15px 30px;
+	border-radius: 4px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: .25s;
+	text-align: center;
+	cursor: pointer;
+	height: 50px;
+	&:hover {
+		text-decoration: none;
+        box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+	}
+	&:active {
+		transition: none;
+		transform: translate3d(0,1px,0);
+	}
+}
+
+.btn-blue {
+	background: #20a2ea;
+	border-color: #20a2ea;
+	color: #fff;
+	&:hover {
+		background: #0f85c7;
+		border-color: #0f85c7;
+		color: #fff;
+	}
+    &:active {
+        background: #04679e;
+        border-color: #04679e;
+    }
+}
+
+.btn-red {
+    background: #d0011b;
+    border-color: #d0011b;
+    color: #fff;
+    &:hover {
+        background: #b70016;
+        border-color: #b70016;
+        color: #fff;
+    }
+    &:active {
+        background: #930011;
+        border-color: #930011;
+    }
+}

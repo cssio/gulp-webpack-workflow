@@ -1,0 +1,9 @@
+ProjectTitle: Gulp Tmpl ggf
+
+PageList:
+- file: homepage.html
+  ready: 100
+- file: page.html
+  ready: 50
+- file: about.html
+  ready: 50
