@@ -6,6 +6,8 @@
 	  	alert(hello)
 	});
 
+	
+
 
 	// 	$('.owl-carousel').owlCarousel({
 	//     loop: true,

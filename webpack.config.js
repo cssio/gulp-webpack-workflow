@@ -16,21 +16,27 @@ module.exports = {
           use: [
               {
                 loader: 'babel-loader',
+                // options: { 
+                //   presets: [ 
+                //     [ 'es2015', { modules: false } ] 
+                //   ] 
+                // }
                 options: { presets: ['env'] }
               }
             ],
-          exclude: [
-                path.resolve(__dirname, 'node_modules'),
+            exclude: [
+                path.resolve(__dirname, '/node_modules/'),
                 path.resolve(__dirname, '/src/js/'),
             ],
         }
       ]
     },
     plugins: [
-      new webpack.ProvidePlugin({
+        new webpack.ProvidePlugin({
           $: "jquery",
           jQuery: "jquery",
-          "window.jQuery": "jquery"
+          "window.jQuery": "jquery",
+          magnificPopup: "$.magnificPopup"
         })
     ]
 };
