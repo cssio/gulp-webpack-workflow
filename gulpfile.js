@@ -65,7 +65,7 @@ var src = {
 	js: 'src/js/**/*.js',
 	images: 'src/images/**/*',
 	
-	spriteImages: 'src/sprites/_images/*.png',
+	spriteImages: 'src/sprites/_images/',
 	spriteSvg: 'src/sprites/_svg/*.svg'
 };
 
@@ -115,7 +115,11 @@ gulp.task('zip', () => {
 
 
 gulp.task('spriteImages', function () {
-	var spriteData = gulp.src(src.spriteImages).pipe(spritesmith({
+	var spriteData = gulp.src(src.spriteImages + '*.png')
+	.pipe(plumber({
+		errorHandler: notify.onError("Error: <%= error.message %>")
+	}))
+	.pipe(spritesmith({
 
 		algorithm: 'binary-tree',
 		padding: 10,
@@ -126,11 +130,17 @@ gulp.task('spriteImages', function () {
 	    imgName: 'sprite.png',
 	    imgPath: '../sprites/sprite.png',
 
-	    cssTemplate: 'src/sprites/_templates/scss.template.handlebars'
+	    retinaSrcFilter: src.spriteImages + '/*@2x.png',
+        retinaImgName: 'sprite@2x.png',
+        retinaImgPath: '../sprites/sprite@2x.png',
+
+	    cssTemplate: 'src/sprites/_templates/sprite.template.mustache'
 
 	}));
+
 	spriteData.img.pipe(gulp.dest('dist/sprites/'));
 	spriteData.css.pipe(gulp.dest('src/sprites/'));
+
 	return spriteData;
 });
 
@@ -141,6 +151,9 @@ gulp.task('spriteSvg', function () {
         .src(src.spriteSvg)
         .pipe(cheerio({
 			run: function ($) {
+
+				// $('[fill]:not([fill="currentColor"])').removeAttr('fill');
+
 				$('[fill]').removeAttr('fill');
 				$('[stroke]').removeAttr('stroke');
 				$('[style]').removeAttr('style');
@@ -220,7 +233,9 @@ gulp.task('scss', function() {
 
 	return gulp.src(src.scss)
 		
-		.pipe(plumber())
+		.pipe(plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}))
 		.pipe(sass())
 		.pipe(autoprefixer({
 		    browsers: ['last 2 versions', '> 1%', 'ie 9'],
@@ -252,7 +267,6 @@ gulp.task('js', function() {
   	.pipe(plumber({
 			errorHandler: notify.onError("Error: <%= error.message %>")
 		}))
-  	// .pipe(cached('js'))
     .pipe(webpackStream(
     	require('./webpack.config.js')
     ))
@@ -292,7 +306,7 @@ gulp.task('clean', function() {
 
 gulp.task('watch', function() {
 	
-	gulp.watch(src.spriteImages, ['spriteImages']);
+	gulp.watch(src.spriteImages + '*.png', ['spriteImages']);
 	gulp.watch(src.spriteSvg, ['spriteSvg']);
 
 	gulp.watch(src.pagelist, ['pages']);
@@ -316,7 +330,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', function() {
 
-	runSequence('clean', 'js', 'scss', 'html', 'fonts', 'images', 'spriteImages', 'spriteSvg', 'pages', 'watch')
+	runSequence('clean', 'spriteImages', 'spriteSvg', 'js', 'scss', 'html', 'fonts', 'images', 'pages', 'watch')
 
 });
 

@@ -1,51 +1,22 @@
+{
+	'functions': true
+}
+
 $sprite: (
-	icon-info-beach: (
-		offset-x: 0px,
-		offset-y: 0px,
-		width: 34px,
-		height: 34px,
-		total-width: 114px,
-		total-height: 76px,
-		image: '../sprites/sprite.png'
+	{{#items}}
+	{{name}}: (
+		offset-x: {{px.offset_x}},
+		offset-y: {{px.offset_y}},
+		width: {{px.width}},
+		height: {{px.height}},
+		total-width: {{px.total_width}},
+		total-height: {{px.total_height}},
+		image: '{{{escaped_image}}}'
 	),
-	icon-info-children: (
-		offset-x: -44px,
-		offset-y: 0px,
-		width: 32px,
-		height: 32px,
-		total-width: 114px,
-		total-height: 76px,
-		image: '../sprites/sprite.png'
-	),
-	icon-info-food: (
-		offset-x: 0px,
-		offset-y: -44px,
-		width: 32px,
-		height: 32px,
-		total-width: 114px,
-		total-height: 76px,
-		image: '../sprites/sprite.png'
-	),
-	icon-info-health: (
-		offset-x: -42px,
-		offset-y: -44px,
-		width: 30px,
-		height: 32px,
-		total-width: 114px,
-		total-height: 76px,
-		image: '../sprites/sprite.png'
-	),
-	icon-info-party: (
-		offset-x: -86px,
-		offset-y: 0px,
-		width: 28px,
-		height: 32px,
-		total-width: 114px,
-		total-height: 76px,
-		image: '../sprites/sprite.png'
-	),
+	{{/items}}
 );
 
+{{#options.functions}}
 
 @mixin sprite-size($image) {
 	background-size: map-get(map-get($sprite, $image), 'total-width') map-get(map-get($sprite, $image), 'total-height');
@@ -101,20 +72,11 @@ $sprite: (
 	}
 }
 
+{{/options.functions}}
 
 
-	.icon-info-beach {
-		@include sprite(icon-info-beach)
+{{#items}}
+	.{{name}} {
+		@include sprite({{name}})
 	}
-	.icon-info-children {
-		@include sprite(icon-info-children)
-	}
-	.icon-info-food {
-		@include sprite(icon-info-food)
-	}
-	.icon-info-health {
-		@include sprite(icon-info-health)
-	}
-	.icon-info-party {
-		@include sprite(icon-info-party)
-	}
+{{/items}}
