@@ -12,7 +12,10 @@ var gulp         = require('gulp'),
 	concat		 = require('gulp-concat'),
 	plumber 	 = require('gulp-plumber'),
 
+	sourcemaps = require('gulp-sourcemaps'),
+
 	pug          = require('gulp-pug'),
+	cached       = require('gulp-cached'),
 
 	sass 		 = require('gulp-sass'),
 	uncss        = require('gulp-uncss'),
@@ -94,13 +97,14 @@ gulp.task('zip', () => {
 	    return i;
 	}
 
-	let zipName = path.basename(__dirname);
-	let zipDate = new Date();
-	let zipDatetime = zipDate.getFullYear() + '-' + (zipDate.getMonth() + 1) + '-' + zipDate.getDate() + 'T' + correctNumber(zipDate.getHours()) + ':' + correctNumber(zipDate.getMinutes())
+	var zipName = path.basename(__dirname);
+	var zipDate = new Date();
+	var zipDatetime = zipDate.getFullYear() + '.' + correctNumber((zipDate.getMonth() + 1)) + '.' + correctNumber(zipDate.getDate()) + 'T' + correctNumber(zipDate.getHours()) + ':' + correctNumber(zipDate.getMinutes())
+	var zipFullname = zipName + '_' + zipDatetime + '.zip';
 
 	
     gulp.src(['./**', '!./node_modules/', '!./node_modules/**', '!./*.zip'])
-        .pipe(zip(zipName + '__' + zipDatetime + '.zip'))
+        .pipe(zip(zipFullname))
         .pipe(gulp.dest('./'))
 });
 
@@ -175,6 +179,7 @@ gulp.task('html', function() {
 		.pipe(plumber({
 			errorHandler: notify.onError("Error: <%= error.message %>")
 		}))
+		.pipe(cached('pug'))
 		.pipe(pug({
 			pretty: true
 		}))
@@ -244,9 +249,14 @@ gulp.task('scss', function() {
 
 gulp.task('js', function() {
   return gulp.src(src.js)
+  	.pipe(plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}))
+  	// .pipe(cached('js'))
     .pipe(webpackStream(
     	require('./webpack.config.js')
     ))
+    // .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(gulp.dest('dist/js/'))
     .pipe(browserSync.reload({ stream: true }));
 });
@@ -304,6 +314,12 @@ gulp.task('watch', function() {
 
 // Gulp
 
-gulp.task('default', ['clean', 'scss', 'html', 'js', 'fonts', 'images', 'spriteImages', 'spriteSvg', 'pages', 'watch']);
+gulp.task('default', function() {
+
+	runSequence('clean', 'js', 'scss', 'html', 'fonts', 'images', 'spriteImages', 'spriteSvg', 'pages', 'watch')
+
+});
+
+// gulp.task('default', ['clean', 'scss', 'html', 'js', 'fonts', 'images', 'spriteImages', 'spriteSvg', 'pages', 'watch']);
 
 

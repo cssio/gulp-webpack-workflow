@@ -1,0 +1,22 @@
+mixin sprite(svg_id)
+    svg(class=svg_id)
+      use(xlink:href= 'sprites/sprite.svg#' + svg_id)
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        meta(name="theme-color" content="#000")
+        meta(name="format-detection" content="telephone=no")
+        meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+
+        title About Project Title
+
+        link(rel="stylesheet" href="css/app.min.css")
+
+
+body
+
+    h1 about
