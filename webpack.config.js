@@ -77,6 +77,10 @@ module.exports = {
         //     // ignorePattern: __dirname + '/src/js/lib/'
         //   }
         // },
+      //   {
+      //   test: path.resolve("svg4everybody"),
+      //   loader: "imports-loader?this=>window"
+      // },
         {
           test: /\.js$/,
           use: [
@@ -149,7 +153,8 @@ module.exports = {
          'jquery': 'jquery',
             'window.jquery': 'jquery',
          '$'     : 'jquery',
-            'window.$'     : 'jquery'
+            'window.$'     : 'jquery',
+            // svg4everybody: "svg4everybody"
 
           // $: 'jquery',
           // jQuery: 'jquery'
@@ -168,7 +173,7 @@ module.exports = {
 
         // 'jquery-validation': path.resolve('node_modules', 'jquery-validation/dist/jquery.validate.js'),
         // 'jquery-validation-methods': path.resolve('node_modules', 'jquery-validation/dist/additional-methods.js'),
-
+        svg4everybody : path.resolve('node_modules', 'svg4everybody/lib/svg4everybody.js'),
         inputmask: path.resolve('node_modules', 'inputmask/dist/jquery.inputmask.bundle.js'),
 
         // TweenLite: path.resolve('node_modules', 'gsap/src/uncompressed/TweenLite.js'),

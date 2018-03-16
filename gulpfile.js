@@ -152,11 +152,11 @@ gulp.task('spriteSvg', function () {
         .pipe(cheerio({
 			run: function ($) {
 
-				// $('[fill]:not([fill="currentColor"])').removeAttr('fill');
+				$('[fill]:not([fill="currentColor"])').removeAttr('fill');
 
-				$('[fill]').removeAttr('fill');
+				// $('[fill]').removeAttr('fill');
 				$('[stroke]').removeAttr('stroke');
-				$('[style]').removeAttr('style');
+				// $('[style]').removeAttr('style');
 			},
 			parserOptions: { xmlMode: true }
 		}))

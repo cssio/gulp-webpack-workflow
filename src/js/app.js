@@ -24,6 +24,10 @@
 // window.jQuery = window.$ = require("jquery");
 
 // import $ from 'jquery';
+
+// import $ from 'jquery';
+import 'svg4everybody';
+
 import 'magnific-popup';
 import 'slick-carousel';
 import '@fancyapps/fancybox';
@@ -54,8 +58,8 @@ import 'air-datepicker';
 
 import './modules/svg.js';
 
-
-// import 'malihu-custom-scrollbar-plugin';
+import 'jquery-mousewheel';
+import 'malihu-custom-scrollbar-plugin';
 
 // import svg4everybody from 'svg4everybody';
 
@@ -78,11 +82,20 @@ $(() => {
 
 
 	
-
+	// svg4everybody();
 	
 	$('html').addClass('is-load');
 
-	// $('.js-scroll').mCustomScrollbar();
+	$('.js-scroll').mCustomScrollbar({
+		mouseWheel:{
+			preventDefault: true
+		},
+		advanced: {
+			updateOnContentResize: true
+		}
+		
+	});
+	// $(selector).mCustomScrollbar("update")
 
 
 	 $('.lazy').lazy({
@@ -98,7 +111,16 @@ $(() => {
 
 	$(".js-slick").slick();
 
-	$('input, select').styler();
+	$('input, select').styler({
+		onSelectOpened: function() {
+		    // к открытому селекту добавляется красная обводка
+		    $(this).find('ul').mCustomScrollbar();
+		  }
+	});
+
+
+
+
 
 	// $.fancybox.open('<div class="message"><h2>Hello!</h2><p>You are awesome!</p></div>');
 
