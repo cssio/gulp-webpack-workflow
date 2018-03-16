@@ -51,6 +51,7 @@
     "run-sequence": "^2.2.0",
     "script": "^0.1.4",
     "script-loader": "^0.7.2",
+    "shim-loader": "^1.0.1",
     "webpack": "^3.8.1",
     "webpack-stream": "^4.0.0"
   },
@@ -71,6 +72,6 @@
     "readmore-js": "^2.1.0",
     "scrollmagic": "^2.0.5",
     "slick-carousel": "^1.8.1",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.0.0"
   }
 }

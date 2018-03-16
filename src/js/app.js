@@ -1,47 +1,10 @@
-
-
-// import owlCarousel from './jquery.owl.carousel.js';
-// import owlCarousel from 'owl.carousel'
-// import scripts from './scripts';
-
-
-// require('./scripts.js')
-
-// require('expose-loader?jQuery!jquery');
-
-// import 'expose?$!expose?window.jQuery!jquery';
-// window.$ = window.jQuery;
-// import jQuery from "jquery";
-// window.$ = window.jQuery = jQuery;  
-// import $ from 'jquery';
-
-// window.$ = window.jQuery = require("jquery");
-
-// import $ from 'jquery';
-// window.jQuery = $;
-// window.$ = $;
-
-// window.jQuery = window.$ = require("jquery");
-
-// import $ from 'jquery';
-
-// import $ from 'jquery';
-import 'svg4everybody';
-
 import 'magnific-popup';
+
 import 'slick-carousel';
-import '@fancyapps/fancybox';
+
 import 'inputmask';
 
-// import 'expose-loader?$.fn.validate!expose-loader?$.validator.addMethod!jquery-validation';
-// import 'expose-loader?$.fn.validate!jquery-validation';
-// import 'jquery-validation/dist/additional-methods.js';
 import 'jquery-validation';
-// import 'jquery-validation/dist/additional-methods.js';
-// import 'expose-loader?$.fn.validate!jquery-validation';
-
-
-// import validation from 'jquery.validation';
 
 import 'jquery-form-styler';
 
@@ -55,13 +18,9 @@ import 'jquery-lazy';
 
 import 'air-datepicker';
 
-
-import './modules/svg.js';
-
 import 'jquery-mousewheel';
 import 'malihu-custom-scrollbar-plugin';
 
-// import svg4everybody from 'svg4everybody';
 
 // import {TimelineMax} from 'gsap';
 
@@ -74,16 +33,13 @@ import 'malihu-custom-scrollbar-plugin';
 // import 'debug.addIndicators';
 
 
-// import 'svg4everybody';
-
-// module.exports = $.magnificPopup
-
 $(() => {
 
-
+	
 	
 	// svg4everybody();
-	
+
+
 	$('html').addClass('is-load');
 
 	$('.js-scroll').mCustomScrollbar({
